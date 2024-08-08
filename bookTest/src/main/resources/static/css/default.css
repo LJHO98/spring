@@ -43,8 +43,16 @@ ul{ list-style: none;}
 	align-items:center;
 	padding:15px 0;
 	border-bottom:1px solid #ccc;
+	text-align:center;
 }
 .title{ width:40%;}
 .auth{width:20%;}
 .bookCode{width:20%;}
 .category{width:20%;}
+
+.itemId{width:10%;}
+.itemName{width:35%;}
+.price{width:35%;}
+.decaffein{width:20%;}
+
+
