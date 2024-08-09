@@ -20,6 +20,21 @@ public class CoffeDao {
 		this.jt=jdbcTemplate;
 	}
 	
+	public void delete(int cid) {
+		String sql = "delete from coffe where coffe_id=?";
+		
+		jt.update(sql, cid);
+		
+	}
+	
+	public CoffeDto findId(int id) {
+		String sql = "select * from coffe where coffe_id=?";
+		
+		CoffeDto data = jt.queryForObject(sql, new CoffeDtoRowMapper(), id);
+		
+		return data;
+	}
+	
 	public List<CoffeDto> select(){
 		String sql = "select * from coffe";
 		
@@ -48,6 +63,13 @@ public class CoffeDao {
 			coffeDto.setDecaffein(rs.getBoolean("decaffein"));	
 			return coffeDto;
 		}
+		
+	}
+
+	public void update(CoffeDto coffeDto) {
+		String sql = "update coffe set item_name=? , price=? , decaffein=? where coffe_id=?";
+		
+		jt.update(sql, coffeDto.getItemName(), coffeDto.getPrice(), coffeDto.isDecaffein(), coffeDto.getCoffeId());
 		
 	}
 }

@@ -17,6 +17,17 @@ public class CoffeService {
 		this.coffeDao=coffeDao;
 	}
 	
+	public void remove(int cid) {
+		coffeDao.delete(cid);
+	}
+	
+	public CoffeDto getInfo(int id) {
+		if(id!=0) {
+			return coffeDao.findId(id);
+		}
+		return null;
+	}
+	
 	public List<CoffeDto> selectAll(){
 		return coffeDao.select();
 	}
@@ -25,5 +36,9 @@ public class CoffeService {
 		if(coffeDto != null) {
 			coffeDao.insert(coffeDto);
 		}
+	}
+
+	public void update(CoffeDto coffeDto) {
+		coffeDao.update(coffeDto);
 	}
 }

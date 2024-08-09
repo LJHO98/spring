@@ -26,7 +26,7 @@
 				<c:forEach var="row" items="${list }">
 					<li class="blist">
 						<span class="itemId">${row.coffeId }</span>
-						<span class="itemName">${row.itemName }</span>
+						<span class="itemName"><a href="/coffe/view?id=${row.coffeId}">${row.itemName }</a></span>
 						<span class="price">${row.price }</span>
 						<span class="decaffein">${row.decaffein == true ? "예" : "아니요"}</span>
 					</li>
