@@ -59,5 +59,6 @@ public class CoffeControl {
 		coffeService.update(coffeDto);
 		
 		return "redirect:/coffe/view?id="+id;
+		
 	}
 }
