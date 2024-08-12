@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xlmns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/css/game.css">
+<script src="/js/game_default.js"></script>
+</head>
+<body>
+	<body>
+	<div id="wrap">
+		<div id="header">
+			<div id="nav">
+				<ul id="menuList">
+					<li> <a href="">신규 게임</a></li>
+					<li> <a href="">출시예정 게임</a></li>
+					<li> <a href="">CBT/OBT 게임</a></li>
+					<li> <a href="/game/review">게임리뷰</a></li>
+				</ul>
+				<div id="userALogo">
+					<div class="userbox">
+						<span class="loginLink">
+							<a th:href="@{/game/login}">로그인</a>
+						</span>
+						<span class="userService">고객센터</span>
+					</div>
+					<div class="logo"></div>
+				</div>
+			</div>
+		</div>
+		<div id="main">
+			<form method="post" th:action="@{/game/signIn}" th:object="${member}">
+				<div id="formData">
+					<div class="inputField">
+						<input type="text" th:field="*{email}">
+						<label th:for="email">아이디</label>
+					</div>
+					<div class="inputField">
+						<input type="password" th:field="*{password}">
+						<label th:for="password">비밀번호</label>
+					</div>
+					<div class="loginBt">
+						<button>LOGIN</button>
+					</div>
+				</div>
+			</form>
+			
+			<div id="forget_new">
+				<a href="">아이디/비밀번호찾기</a>
+				<a href="/game/signUp">회원가입</a>
+			</div>
+		</div>
+		<div id="footer">
+		
+		</div>
+	</div>
+</body>
+</html>

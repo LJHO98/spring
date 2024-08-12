@@ -10,7 +10,7 @@
 <body>
 <div id=wrap>
 	<h2>커피 등록</h2>
-	<a href="coffe/index">HOME</a>
+	<a href="/coffe">HOME</a>
 	<form method="post" action="/coffeWrite">
 		<div id="formWrap">
 			<div class="inputField">

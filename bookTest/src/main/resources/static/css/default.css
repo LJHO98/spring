@@ -55,4 +55,12 @@ ul{ list-style: none;}
 .price{width:35%;}
 .decaffein{width:20%;}
 
+.itemName a{ text-decoration:none; color:black;}
+.itemName a:hover{
+	color:blue;
+	font-weight:800;
+}
+
+
+
 

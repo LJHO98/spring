@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+ul{list-style:none;}
+a{color:inherit; text-decoration:none;}
+
+#wrap{
+	width:1000px;
+	margin:0 auto;
+}
+
+#nav{
+	padding:20px 0; position:sticky;
+	top:0; display:flex;
+	align-items:center;
+}
+
+#menuList{
+	width:650px; display:flex;
+	justify-content:space-evenly;
+}
+#userALogo{
+	width:350px; display:flex;
+	heigh:80px;
+}
+
+#userALogo .logo{
+	background:url(/image/gameLogo.jpg) no-repeat center;
+	background-size:contain;
+	width:200px; cursor:pointer;
+}
+.userbox span{
+	line-height:80px;
+}
+
+#formData{
+	width:300px;
+	margin:0 auto;
+}
+#forget_new{
+	width:300px;
+	margin:0 auto;
+}

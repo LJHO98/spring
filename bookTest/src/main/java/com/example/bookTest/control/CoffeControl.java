@@ -50,7 +50,7 @@ public class CoffeControl {
 	public String write(@ModelAttribute CoffeDto coffeDto) {
 		coffeService.coffeSave(coffeDto);
 	
-		return "redirect:coffe/index";
+		return "redirect:/coffe";
 	}
 	
 	@GetMapping("/coffe/update")
