@@ -9,7 +9,4 @@ public class GameMember {
 	private String email;
 	private String password;
 	private String name;
-	private int birthYear;
-	private int birthMonth;
-	private String tel;
 }

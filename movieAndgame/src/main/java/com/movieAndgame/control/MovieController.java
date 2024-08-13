@@ -12,7 +12,7 @@ import com.movieAndgame.Dto.MovieMember;
 @RequestMapping("/movie")
 public class MovieController {
 	
-	// "/"은 localhost/movie/index 매핑이다.
+	// "/index"은 localhost/movie/index 매핑이다.
 	@GetMapping("/index")
 	public String movieHome(Model model) {
 		return "movie/index";
@@ -23,5 +23,11 @@ public class MovieController {
 		model.addAttribute("member", new MovieMember());
 		
 		return "movie/member/login";
+	}
+	
+	@GetMapping("/signUp")
+	public String signUp(Model model) {
+		model.addAttribute("movieMember", new MovieMember());
+		return "movie/member/join";
 	}
 }

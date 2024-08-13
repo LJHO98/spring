@@ -21,6 +21,6 @@ public class GameController {
 	}
 	@GetMapping("/signUp")
 	public String signUp() {
-		return "game/member/signUp";
+		return "game/member/join";
 	}
 }
