@@ -1,15 +1,25 @@
 package com.movieAndgame.control;
 
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.movieAndgame.Dto.GameMember;
+import com.movieAndgame.service.GameMemberService;
 
 @Controller
 @RequestMapping("/game")
 public class GameController {
+	
+	@Autowired
+	GameMemberService gameMemberService;
+	
 	@GetMapping("/index")
 	public String gameHome(Model model) {
 		return "game/index";
@@ -20,7 +30,17 @@ public class GameController {
 		return "game/member/login";
 	}
 	@GetMapping("/signUp")
-	public String signUp() {
+	public String signUp(Model model) {
+		model.addAttribute("gameMember", new GameMember());
 		return "game/member/join";
+	}
+	
+	@PostMapping("/signUp") //여기서의 gameMember는 join.html에 form태그에 th:object를 통해 지정한 gameMember이다.
+	public String submit(@Valid GameMember gameMember, BindingResult bindResult, Model model) {
+		if(bindResult.hasErrors()) {
+			return "game/member/join";
+		}
+		gameMemberService.signUpSave(gameMember);
+		return "redirect:/game/login";
 	}
 }

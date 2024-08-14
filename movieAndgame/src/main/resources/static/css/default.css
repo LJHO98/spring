@@ -12,6 +12,8 @@ a{color:inherit; text-decoration: none;}
 #wrap{
 	width:1000px;
 	margin:0 auto;
+	
+
 }
 #nav{
 	padding:20px 0; position:sticky;
@@ -33,5 +35,8 @@ a{color:inherit; text-decoration: none;}
 }
 .userbox span{
 	line-height:80px;
+}
+#header{
+	height:auto;
 }
 

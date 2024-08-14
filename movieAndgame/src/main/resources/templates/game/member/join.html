@@ -6,11 +6,45 @@
 
 <head>
 	<title layout:fragment="title">회원가입</title>
-	<th:block layout:fragment="css"></th:block>
-	<th:block layout:fragment="js"></th:block>
+	<th:block layout:fragment="css">
+		<link rel="stylesheet" href="/css/game_join.css">
+	</th:block>
+	<th:block layout:fragment="js">
+		<script src="/js/game_join.js"></script>
+	</th:block>
 </head>
 	<div layout:fragment="main" id="main">
+		<form method="post" action="/game/signUp" th:object="${gameMember}">
+			<div id="formData">
+				<div class="inputField">
+					<input type="email" th:field="*{email}">
+					<label th:for="email">이메일</label>
+					<p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+				</div>		
+				<div class="inputField">
+					<input type="password" th:field="*{password}">
+					<label th:for="password">비밀번호
+						<b id="pw1"></b>
+					</label>
+					<p th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
+				</div>
+				<div class="inputField">
+					<input type="password" id="chk">
+					<label th:for="chk">비밀번호 확인
+						<b id="pw2"></b>
+					</label>
+				</div>
+				<div class="inputField">
+					<input type="text" th:field="*{name}">
+					<label th:for="name">이름</label>
+					<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+				</div>		
+				
+				<button id="joinBt">SignUp</button>
+
+			</div>
 	
+		</form>
 	</div>
 
 </html>
