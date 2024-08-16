@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.movieAndgame.Dao.MovieMemberDao">
+	<select id="login" parameterType="com.movieAndgame.Dto.MovieMember" resultType="com.movieAndgame.Dto.MovieMember">
+		select email, name, tel, birth_year, birth_month
+			from movie_member
+			where email=#{email} and password=#{password}
+	</select>
+
+	<select id="findAllEmail" resultType="java.lang.String">
+		select email from movie_member;
+	</select>
+
 	<insert id="insert" parameterType="com.movieAndgame.Dto.MovieMember">
 		insert into movie_member(email, password, name, tel, birth_year, birth_month)
 			values(#{email}, #{password}, #{name}, #{tel}, #{birthYear}, #{birthMonth})

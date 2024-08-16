@@ -5,6 +5,10 @@
 		insert into game_member(email, password, name)
 		values(#{email}, #{password}, #{name})
 	</insert>
-
+	
+	<select id="login" parameterType="com.movieAndgame.Dto.GameMember" resultType="com.movieAndgame.Dto.GameMember">
+		select email, name from game_member where email=#{email} and password=#{password}
+	
+	</select>
 
 </mapper>

@@ -14,6 +14,9 @@ public class GameMemberService {
 	
 	public void signUpSave(GameMember gameMember) {
 		gameMemberDao.insert(gameMember);
-		
+	}
+	
+	public GameMember login(GameMember gameMember) {
+		return gameMemberDao.login(gameMember);
 	}
 }

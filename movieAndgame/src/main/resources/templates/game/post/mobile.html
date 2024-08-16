@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{game/default}"
+>
+
+<head>
+	<title layout:fragment="title">모바일게임 공략</title>
+	<th:block layout:fragment="css"></th:block>
+	<th:block layout:fragment="js"></th:block>
+</head>
+	<div layout:fragment="main" id="main">
+		<div id="section_top">
+			<h3>모바일게임 공략</h3>
+			<p> <a href="/gamePost/tacticWrite">공략 작성</a> </p>
+		</div>
+		<div id="section_middle">
+			<table id="taticList">
+			</table>
+		</div>
+		<div id="section_bottom">
+			<div id="searchBox">
+			</div>
+		</div>
+	</div>
+
+</html>

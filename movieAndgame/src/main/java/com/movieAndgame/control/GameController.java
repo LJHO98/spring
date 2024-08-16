@@ -1,5 +1,6 @@
 package com.movieAndgame.control;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,5 +43,17 @@ public class GameController {
 		}
 		gameMemberService.signUpSave(gameMember);
 		return "redirect:/game/login";
+	}
+	
+	@PostMapping("/signIn")
+	public String signIn(GameMember member, HttpSession session, Model model) {
+		GameMember user = gameMemberService.login(member);
+		if(user==null) {
+			model.addAttribute("member", member);
+			model.addAttribute("fail", "f");
+			return "game/member/login";
+		}
+		session.setAttribute("user", user);
+		return "redirect:/game/index";
 	}
 }

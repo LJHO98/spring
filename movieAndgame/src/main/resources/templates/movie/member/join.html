@@ -18,7 +18,9 @@
 			<div id="formData">
 				<div class="inputField">
 					<input type="email" th:field="*{email}">
-					<label th:for="email">이메일</label>
+					<label th:for="email">이메일
+						<b id="isDup"></b>
+					</label>
 					<p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="fieldError"></p>
 				</div>
 				<div class="inputField">

@@ -7,4 +7,5 @@ import com.movieAndgame.Dto.GameMember;
 @Mapper
 public interface GameMemberDao {
 	public int insert(GameMember gameMember);
+	public GameMember login(GameMember gameMember);
 }
