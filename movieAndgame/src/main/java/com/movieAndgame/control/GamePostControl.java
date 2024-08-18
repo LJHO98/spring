@@ -29,6 +29,7 @@ public class GamePostControl {
 	@GetMapping("/tacticWrite")
 	public String tacticWrite(Model model, HttpSession session) {
 		if(session.getAttribute("user")==null) {
+			session.setAttribute("writeFail", true);
 			return "redirect:/game/login";
 		}
 		GamePostDto dto = new GamePostDto();

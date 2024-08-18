@@ -48,12 +48,17 @@ public class GameController {
 	@PostMapping("/signIn")
 	public String signIn(GameMember member, HttpSession session, Model model) {
 		GameMember user = gameMemberService.login(member);
+		boolean writeFail = (boolean)session.getAttribute("writeFail");
 		if(user==null) {
 			model.addAttribute("member", member);
 			model.addAttribute("fail", "f");
 			return "game/member/login";
 		}
 		session.setAttribute("user", user);
+		if(writeFail) {
+			session.removeAttribute("writeFail");
+			return "redirect:/gamePost/tacticWrite";
+		}
 		return "redirect:/game/index";
 	}
 }
