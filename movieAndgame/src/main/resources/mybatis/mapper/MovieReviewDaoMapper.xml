@@ -3,7 +3,15 @@
 <mapper namespace="com.movieAndgame.Dao.MovieReviewDaoImpl">
 	<insert id="reviewSave" parameterType="com.movieAndgame.Dto.MovieReviewDto">
 		insert into movie_review(writer, title, content, write_date)
-		values(#{writer}, #{title}, #{content},now()); 
+		values(#{writer}, #{title}, #{content},now())
 	</insert>
+	
+	<select id="reviewLoad" resultType="com.movieAndgame.Dto.MovieReviewDto">
+		select * from movie_review order by write_date desc
+	</select>
+	
+	<select id="findById" resultType="com.movieAndgame.Dto.MovieReviewDto">
+		select * from movie_review where review_id=#{id}
+	</select>
 
 </mapper>

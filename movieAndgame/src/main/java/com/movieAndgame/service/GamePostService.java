@@ -1,5 +1,7 @@
 package com.movieAndgame.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,5 +15,13 @@ public class GamePostService {
 	
 	public void postSave(GamePostDto gamePostDto ) {
 		gamePostDao.save(gamePostDto);
+	}
+	
+	public List<GamePostDto> postList(){
+		return gamePostDao.findAll();
+	}
+
+	public GamePostDto findById(int id) {
+		return gamePostDao.findById(id);
 	}
 }

@@ -16,6 +16,20 @@
 		</div>
 		<div id="section_middle">
 			<table id="taticList">
+				<tr>
+					<th class="num">번호</th>
+					<th class="game">게임</th>
+					<th class="title">제목</th>
+					<th class="date">작성일</th>
+				</tr>
+				
+				<tr th:each="row : ${tacticList}">
+					<td class="num" th:text="${row.post_id}"></td>
+					<td class="game" th:text="${row.game_name}"></td>
+					<td class="title"><a th:href="@{'/gamePost/view/'+${row.post_id}}" th:text="${row.title}"></a></td>
+					<td class="date" th:text="${#temporals.format(row.write_date, 'yyyy-MM-dd')}"></td>
+				</tr>
+			
 			</table>
 		</div>
 		<div id="section_bottom">

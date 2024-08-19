@@ -20,5 +20,5 @@ public class MovieReviewDto {
 	
 	@Size(min=10, max=300, message="최소 10자이상 최대 300자 이하로 입력해주세요")
 	private String content;
-	private LocalDateTime writeDate;
+	private LocalDateTime write_date;
 }
